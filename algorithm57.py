@@ -3,6 +3,9 @@
 #
 # Input: An initial vector $u\in pi^{-1}(b)$, A matrix G where each row denotes each binomial element of Groebner Basis.
 #        Note that $G_{i}^{+} > G_{i}^{-}$ where $>$ denotes term order for the Basis.
+#
+# Just note that you can calculate such $u$ and $G$ using Macaulay2.
+#
 # Output= Passive: All elements in a fiber $pi^{-1}(b)$.
 #
 #######
@@ -59,14 +62,7 @@ while len(Active)>0:
     #print Active
     #print Passive
 
-print len(Active)
-print len(Passive)
+print len(Active) #This should be zero.
+print len(Passive) # This gives the cardinality of the fiber.
 
-newPassive = set();
-#Check 100 condition
-for j in Passive:
-    temp =list(j)
-    if sum(temp) == 100:
-        newPassive.add(j)
-print len(newPassive)
 
