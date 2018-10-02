@@ -1,9 +1,9 @@
 ########
-# Find all elements in a fiber pi^{-1}(b). (Algorithm 5.7 in [Stu92])
+# Find all elements in a fiber pi^{-1}(b). (See Algorithm 5.7 in [Stu92])
 #
 # Input: An initial vector $u\in pi^{-1}(b)$, A matrix G where each row denotes each binomial element of Groebner Basis.
 #        Note that $G_{i}^{+} > G_{i}^{-}$ where $>$ denotes term order for the Basis.
-# Output: All elements in a fiber $pi^{-1}(b)$.
+# Output= Passive: All elements in a fiber $pi^{-1}(b)$.
 #
 #######
 
@@ -45,6 +45,7 @@ while len(Active)>0:
                 if i<0:
                     positive_test = 0
             uplusv = np.array(u)+np.array(v);
+            #Membership test
             if tuple(uplusv.tolist()) in Passive:
                 membership_test = 1;
             else:
